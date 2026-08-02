@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080a10">
+  <meta name="description" content="Connection: by Lititz BMX — launch finished Lititz BMX applications and connected destinations.">
+  <title>Connection: by Lititz BMX</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#apps">Skip to applications</a>
+
+  <div id="boot" class="boot" role="status" aria-live="polite">
+    <div class="boot__inner">
+      <div class="boot__name">CONNECTION</div>
+      <div class="boot__maker">
+        <span>by</span>
+        <img src="assets/lititz-bmx-logo-white-white.png" alt="Lititz BMX">
+      </div>
+      <div class="boot__status" id="boot-status">Starting Connection…</div>
+      <div class="boot__track" aria-hidden="true"><div class="boot__bar"></div></div>
+    </div>
+  </div>
+
+  <main class="device" id="connection" tabindex="-1">
+    <header class="masthead">
+      <div class="brand-lockup">
+        <h1>CONNECTION</h1>
+        <div class="maker">
+          <span>by</span>
+          <img src="assets/lititz-bmx-logo-white-white.png" alt="Lititz BMX">
+        </div>
+      </div>
+
+      <div class="system-row" aria-label="Connection status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>3 APPS INSTALLED</span>
+        <span aria-hidden="true">•</span>
+        <span>READY</span>
+      </div>
+
+      <button class="install-button" id="install-button" type="button" hidden>
+        Install Connection
+      </button>
+    </header>
+
+    <section class="apps" id="apps" aria-labelledby="apps-title">
+      <h2 id="apps-title" class="visually-hidden">Installed applications</h2>
+
+      <a class="app-card" data-app="Knowledge Register"
+         href="https://article134-tech.github.io/lititzbmx-public-knowledge-register/"
+         aria-describedby="register-description">
+        <span class="count-badge">500</span>
+        <span class="app-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M17 12h30v40H17z"/><path d="M24 22h16M24 30h16M24 38h10"/><path d="M12 18v38h30"/></svg>
+        </span>
+        <span class="app-title">Knowledge Register</span>
+        <span class="app-rule" aria-hidden="true"></span>
+        <span class="app-description" id="register-description">Verified records, sources<br>and BMX research</span>
+        <span class="launch-cue" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="app-card" data-app="Research Atlas"
+         href="https://article134-tech.github.io/lititzbmx-global-bmx-research/"
+         aria-describedby="atlas-description">
+        <span class="count-badge">212</span>
+        <span class="app-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="22"/><path d="M10 32h44M32 10c8 8 12 15 12 22S40 46 32 54M32 10c-8 8-12 15-12 22s4 14 12 22"/></svg>
+        </span>
+        <span class="app-title">Research Atlas</span>
+        <span class="app-rule" aria-hidden="true"></span>
+        <span class="app-description" id="atlas-description">Explore BMX history<br>around the world</span>
+        <span class="launch-cue" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="app-card" data-app="Games"
+         href="https://article134-tech.github.io/lititzbmx-games/"
+         aria-describedby="games-description">
+        <span class="count-badge">7</span>
+        <span class="app-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M18 23h28l7 20a8 8 0 0 1-14 7l-4-6h-6l-4 6a8 8 0 0 1-14-7z"/><path d="M22 32v10M17 37h10"/><circle cx="41" cy="34" r="2"/><circle cx="46" cy="40" r="2"/></svg>
+        </span>
+        <span class="app-title">Games</span>
+        <span class="app-rule" aria-hidden="true"></span>
+        <span class="app-description" id="games-description">Interactive BMX history<br>experiences</span>
+        <span class="launch-cue" aria-hidden="true">↗</span>
+      </a>
+    </section>
+
+    <aside class="resume" id="resume" hidden>
+      <span>Resume:</span>
+      <a id="resume-link" href="#"></a>
+      <button id="clear-resume" type="button" aria-label="Clear remembered application">×</button>
+    </aside>
+
+    <nav class="dock" aria-label="Connected destinations">
+      <div class="dock-label">CONNECTED DESTINATIONS</div>
+      <div class="dock-surface">
+        <a href="https://www.lititzbmx.com/" class="dock-item">
+          <span class="dock-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M5 14 16 5l11 9v13H5z"/><path d="M12 27v-8h8v8"/></svg>
+          </span><span>Archive</span>
+        </a>
+        <a href="https://www.youtube.com/@LititzBMX17543" class="dock-item">
+          <span class="dock-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><rect x="3" y="7" width="26" height="18" rx="6"/><path d="m13 12 8 4-8 4z"/></svg>
+          </span><span>YouTube</span>
+        </a>
+        <a href="https://open.spotify.com/show/50iXYKiNPlsvM47ZPZL1Fi" class="dock-item">
+          <span class="dock-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M9 13c5-2 11-1 15 1M10 17c5-1 9 0 13 2M11 21c4-1 7 0 10 2"/></svg>
+          </span><span>Spotify</span>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61573071505099" class="dock-item">
+          <span class="dock-icon dock-letter" aria-hidden="true">f</span><span>Facebook</span>
+        </a>
+        <a href="https://github.com/Article134-tech" class="dock-item">
+          <span class="dock-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M16 4a12 12 0 0 0-4 23c1 .2 1-1 1-1v-3c-4 1-5-2-5-2-1-2-2-2-2-2-1-1 0-1 0-1 2 0 3 2 3 2 2 2 4 1 4 0 0-1 1-2 1-2-4 0-8-2-8-6 0-1 1-3 1-4 0 0-1-2 0-4 0 0 2 0 4 2a14 14 0 0 1 8 0c2-2 4-2 4-2 1 2 0 4 0 4 1 1 1 3 1 4 0 4-4 6-8 6 1 1 1 2 1 3v5s0 1 1 1A12 12 0 0 0 16 4z"/></svg>
+          </span><span>GitHub</span>
+        </a>
+        <a href="https://www.paypal.me/kyto1138" class="dock-item dock-item--donate">
+          <span class="dock-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M16 27S5 20 5 12a6 6 0 0 1 11-3 6 6 0 0 1 11 3c0 8-11 15-11 15z"/></svg>
+          </span><span>Donate</span>
+        </a>
+      </div>
+    </nav>
+
+    <footer>
+      <span>Connection 1.0.0</span>
+      <span>Connection: by Lititz BMX</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
