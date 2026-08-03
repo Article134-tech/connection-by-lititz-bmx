@@ -1,4 +1,4 @@
-const CACHE='connection-v1.0.1';
+const CACHE='connection-v1.0.2';
 const SHELL=['./','./index.html','./styles.css','./app.js','./manifest.webmanifest',
 './assets/lititz-bmx-logo-white-white.png','./assets/icon-192.png','./assets/icon-512.png'];
 

@@ -6,6 +6,12 @@
   const hasBooted = sessionStorage.getItem('connectionBooted') === '1';
   const delay = reduceMotion ? 50 : (hasBooted ? 450 : 1650);
 
+  // Returning from another app should restore the Connection home screen,
+  // not the previous scroll position or a cached launch overlay.
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
   if (hasBooted) {
     bootStatus.textContent = 'Waking Connection…';
   } else {
@@ -56,6 +62,29 @@
 
       setTimeout(() => { window.location.assign(url); }, reduceMotion ? 50 : 460);
     });
+  });
+
+  function restoreConnectionHome() {
+    document.querySelectorAll('.launch-overlay').forEach(overlay => overlay.remove());
+    document.querySelectorAll('.app-card.is-launching').forEach(card => {
+      card.classList.remove('is-launching');
+    });
+    showResume();
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+        main.focus({preventScroll: true});
+      });
+    });
+  }
+
+  window.addEventListener('pageshow', event => {
+    const navigation = performance.getEntriesByType('navigation')[0];
+    const returnedByBackButton = event.persisted || navigation?.type === 'back_forward';
+    if (returnedByBackButton) {
+      restoreConnectionHome();
+    }
   });
 
   showResume();
