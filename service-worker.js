@@ -1,11 +1,10 @@
-const CACHE='connection-v1.0.2';
+const CACHE='connection-v1.0.3';
 const SHELL=['./','./index.html','./styles.css','./app.js','./manifest.webmanifest',
 './assets/lititz-bmx-logo-white-white.png','./assets/icon-192.png','./assets/icon-512.png'];
 
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));
 });
-
 self.addEventListener('activate',event=>{
   event.waitUntil(
     caches.keys()
@@ -16,7 +15,6 @@ self.addEventListener('activate',event=>{
 
 self.addEventListener('fetch',event=>{
   if(event.request.method!=='GET') return;
-
   if(event.request.mode==='navigate'){
     event.respondWith(
       fetch(event.request)
@@ -29,7 +27,6 @@ self.addEventListener('fetch',event=>{
     );
     return;
   }
-
   event.respondWith(
     caches.match(event.request).then(cached=>{
       const network=fetch(event.request).then(response=>{

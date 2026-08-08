@@ -29,9 +29,16 @@ The included Lititz BMX logo is the exact approved white-tire / white-lettering 
 - Reduced-motion support
 - Launch transitions
 - Last-opened application memory and Resume control
+- Resume resolves the remembered application through the current Connection routing configuration rather than retaining a historical destination URL
 - Installable Progressive Web App manifest
 - Offline app-shell caching
 - GitHub Pages deployment workflow
+
+## Routing and live-metric policy
+
+The application cards in `index.html` are the authoritative routing configuration for Connection. Resume stores the stable application key only and resolves the current title and URL from those cards when Connection loads.
+
+Connection intentionally does not duplicate volatile record/profile/game totals from the applications it launches. Current totals belong to, and should be read from, the destination applications themselves. This prevents launcher metadata from silently becoming stale when an independently deployed Lititz BMX application grows or changes.
 
 ## Deploy
 
