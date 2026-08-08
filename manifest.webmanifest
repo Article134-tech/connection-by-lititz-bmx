@@ -3,7 +3,7 @@
   "short_name": "Connection",
   "description": "Launch finished Lititz BMX applications and connected destinations.",
   "start_url": "./",
-  "scope": "./",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#080a10",
   "theme_color": "#080a10",
